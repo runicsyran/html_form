@@ -95,7 +95,7 @@
         <input type="text" id="res" name="res" onfocus="clearError('res')" onblur="validateField('res')"><br>
         <div id="res-error" class="error"></div>
 
-        <input type="submit" value="Submit" onclick="return validateForm(event)"><br>
+        <input type="submit" value="Submit" onclick=""><br>
     </form>
 
     <div id="warning-message" class="warning"></div>

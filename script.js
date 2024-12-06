@@ -48,25 +48,6 @@ function validateForm(event) {
             warningMessage += "- " + fieldLabel + "\n";
             
         });
-        const popup = new Popup({
-            id: "demo-popup",
-            title: "Demo Popup",
-            content: `
-                This is a demo of the popup library.
-                big-margin§This line has a larger top margin.
-                This is an example of {a-https://example.com}[a link].
-                This is an example of {btn-red-button}[a red button].
-                This text is {red}[red] {bold green}[bold green] {blue}[blue]].
-                This text has a                lot of spaces.
-                big-margin space-out§This line and the next {btn-b1}[Button 1]
-                space-out§are left aligned. {btn-b2}[Button 2]
-                big-margin§This text {shadow}[has {white}[some] shadow].`,
-            titleColor: "#4842f5",
-            backgroundColor: "#bff7ff",
-            showImmediately: true,
-            sideMargin: "15%",
-        });
-        popup.show();
     }
     return isValid; // Restituisce true per inviare il modulo, false per fermarlo
 }
