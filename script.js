@@ -47,7 +47,7 @@ function validateForm(event) {
             let fieldLabel = document.querySelector('label[for="' + fieldId + '"]').textContent;
             warningMessage += "- " + fieldLabel + "\n";
         });
-        alert(warningMessage);
+        /*alert(warningMessage);*/
         const myPopup = new Popup({
             id: "my-popup",
             title: "My First Popup",
