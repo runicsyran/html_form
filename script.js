@@ -50,10 +50,9 @@ function validateForm(event) {
         /*alert(warningMessage);*/
         const myPopup = new Popup({
             id: "my-popup",
-            title: "My First Popup",
-            content: `
-                An example popup.
-                Supports multiple lines.`,
+            title: "I seguenti campi sono stati lasciati vuoti",
+            content: warningMessage,
+            color:"purple"
         });
         myPopup.show();
     }
