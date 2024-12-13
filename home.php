@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url("./asset/img/blackhole-wallpaper.webp"); /* Colore di sfondo della pagina */
+            background-image: url("/asset/img/blackhole-wallpaper.webp"); /* Colore di sfondo della pagina */
             background-size: cover;
             margin: 0;
             padding: 20px;
