@@ -49,10 +49,10 @@ function validateForm(event) {
         });
         /*alert(warningMessage);*/
         const myPopup = new Popup({
-            id: "my-popup",
+            id: "popup1",
             title: "I seguenti campi sono stati lasciati vuoti",
             content: warningMessage,
-            color:"purple"
+            color: purple
         });
         myPopup.show();
     }
