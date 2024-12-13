@@ -6,7 +6,7 @@ for file in $changedFiles; do
     # Costruisci il percorso FTP per il file
     relativePath=$(dirname "$file" | sed 's/^\.\///')
     fileName=$(basename "$file")
-    ftpRequest="ftp://michelangelocuccui:Password@ftp.michelangelocuccui.altervista.org:21/$relativePath/$fileName"
+    ftpRequest="ftp://michelangelocuccui:DioBrando21@ftp.michelangelocuccui.altervista.org:21/$relativePath/$fileName"
 
     # Esegui il comando curl per caricare il file
     curlCommand="curl -T \"$file\" \"$ftpRequest\" --ftp-pasv --ftp-create-dirs"
