@@ -48,6 +48,14 @@ function validateForm(event) {
             warningMessage += "- " + fieldLabel + "\n";
         });
         alert(warningMessage);
+        const myPopup = new Popup({
+            id: "my-popup",
+            title: "My First Popup",
+            content: `
+                An example popup.
+                Supports multiple lines.`,
+        });
+        myPopup.show();
     }
     return isValid; // Restituisce true per inviare il modulo, false per fermarlo
 }
