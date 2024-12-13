@@ -46,8 +46,8 @@ function validateForm(event) {
         emptyFields.forEach(function(fieldId) {
             let fieldLabel = document.querySelector('label[for="' + fieldId + '"]').textContent;
             warningMessage += "- " + fieldLabel + "\n";
-            
         });
+        alert(warningMessage);
     }
     return isValid; // Restituisce true per inviare il modulo, false per fermarlo
 }
