@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $residence = isset($_POST['res']) ? htmlspecialchars($_POST['res']) : '';
 
     //elaborazione dati
-    preg_match("/([0-9])/g/", $data, $data);
+    preg_match("*([0-9])/g*", $data, $data);
     var_dump($data);
     $data = $data[2]." ".$data[1]." ".$data[0];
 
