@@ -92,6 +92,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "<p>Form non inviato correttamente</p>";
 }
-?>
 */
-var_dump($_GET);
+var_dump($_POST);
