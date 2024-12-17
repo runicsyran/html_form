@@ -90,7 +90,7 @@
 
             <label for="data">Data:</label><br>
             <input type="text" name="data" id="dataPicker"  onblur="validateField('dataPicker')"><br>
-            <div id="data-error" class="error"></div>
+            <div id="dataPicker-error" class="error"></div>
 
             <label for="city">Città:</label><br>
             <input type="text" id="city" name="city" onfocus="clearError('city')" onblur="validateField('city')"><br>
