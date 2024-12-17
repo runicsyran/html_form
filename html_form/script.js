@@ -24,7 +24,7 @@ function validateForm(event) {
     let emptyFields = []; // Array per raccogliere i campi vuoti
 
     // Lista di ID dei campi da validare
-    let fields = ['name', 'surn', 'gender', 'data', 'city', 'res'];
+    let fields = ['name', 'surn', 'gender', 'dataPicker', 'city', 'res'];
     
     // Verifica se ogni campo è vuoto
     fields.forEach(function(fieldId) {
