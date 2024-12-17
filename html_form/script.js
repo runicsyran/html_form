@@ -28,6 +28,7 @@ function validateForm(event) {
     
     // Verifica se ogni campo è vuoto
     fields.forEach(function(fieldId) {
+        console.log(fieldId);
         let field = document.getElementById(fieldId);
         let errorDiv = document.getElementById(fieldId + '-error');
         if (field.value.trim() === "") {
