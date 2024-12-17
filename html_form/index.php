@@ -87,6 +87,10 @@
         </select><br>
         <div id="gender-error" class="error"></div>
 
+        <label for="data">Data:</label><br>
+        <span id="dataPickerSlot"></span>
+        <div id="data-error" class="error"></div>
+
         <label for="city">Città:</label><br>
         <input type="text" id="city" name="city" onfocus="clearError('city')" onblur="validateField('city')"><br>
         <div id="city-error" class="error"></div>
@@ -107,6 +111,7 @@
         import 'air-datepicker/air-datepicker.css'
 
         new AirDatepicker('#el');
+        
     </script>
 
 </body>
