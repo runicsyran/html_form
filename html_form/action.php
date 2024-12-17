@@ -76,6 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $surname = isset($_POST['surn']) ? htmlspecialchars($_POST['surn']) : '';
     $gender = isset($_POST['gender']) ? htmlspecialchars($_POST['gender']) : '';
     $city = isset($_POST['city']) ? htmlspecialchars($_POST['city']) : '';
+    $data = isset($_POST['data']) ? htmlspecialchars($_POST['data']) : '';
     $residence = isset($_POST['res']) ? htmlspecialchars($_POST['res']) : '';
 
     // Mostra i dati in una tabella
@@ -85,6 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<tr><td><strong>Name</strong></td><td>" . $name . "</td></tr>";
     echo "<tr><td><strong>Surname</strong></td><td>" . $surname . "</td></tr>";
     echo "<tr><td><strong>Gender</strong></td><td>" . $gender . "</td></tr>";
+    echo "<tr><td><strong>Gender</strong></td><td>" . $data . "</td></tr>";
     echo "<tr><td><strong>City</strong></td><td>" . $city . "</td></tr>";
     echo "<tr><td><strong>Residence Address</strong></td><td>" . $residence . "</td></tr>";
     echo "</table>";
