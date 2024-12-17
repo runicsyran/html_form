@@ -79,6 +79,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = isset($_POST['data']) ? htmlspecialchars($_POST['data']) : '';
     $residence = isset($_POST['res']) ? htmlspecialchars($_POST['res']) : '';
 
+    //elaborazione dati
+    preg_match("/([0-9])/", $data, $data);
+    var_dump($data);
+    $data = $data[2]." ".$data[1]." ".$data[0];
+
     // Mostra i dati in una tabella
     echo "<h1>Form inviato con successo</h1>";
     echo "<table border='1' cellpadding='10' cellspacing='0' style='width: 50%; margin: 20px auto; text-align: left; border-collapse: collapse;'>";
