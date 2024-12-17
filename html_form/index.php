@@ -89,7 +89,7 @@
             <div id="gender-error" class="error"></div>
 
             <label for="data">Data:</label><br>
-            <input type="text" name="data" id="dataPicker" onfocus="cleanError('data')" onblur="validateField('data')"><br>
+            <input type="text" name="data" id="dataPicker" onfocus="cleanError('data')" /*onblur="validateField('data')"*/><br>
             <div id="data-error" class="error"></div>
 
             <label for="city">Città:</label><br>
