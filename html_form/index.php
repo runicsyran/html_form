@@ -100,8 +100,11 @@
 
     <div id="warning-message" class="warning"></div>
         
-    <script src=".\script.js"></script>
-    <script src=".\popup.js"></script>
+    <script src="./script.js"></script>
+    <script src="./popup.js"></script>
+    <script /*src="./dataPicker.js"*/>
+
+    </script>
 
 </body>
 </html>
