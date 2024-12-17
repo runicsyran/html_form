@@ -103,7 +103,10 @@
     <script src="./script.js"></script>
     <script src="./popup.js"></script>
     <script /*src="./dataPicker.js"*/>
+        import AirDatepicker from 'air-datepicker'
+        import 'air-datepicker/air-datepicker.css'
 
+        new AirDatepicker('#el');
     </script>
 
 </body>
