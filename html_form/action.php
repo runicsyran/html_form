@@ -69,6 +69,7 @@
 </style>
 
 <?php
+/*
 // Verifica se i dati sono stati inviati tramite POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recupera i dati inviati dal form
@@ -92,3 +93,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<p>Form non inviato correttamente</p>";
 }
 ?>
+*/
+var_dump($_GET);
