@@ -45,7 +45,7 @@ function validateForm(event) {
         // Mostra un avviso con i campi vuoti
         let warningMessage = "I seguenti campi sono stati lasciati vuoti:\n";
         emptyFields.forEach(function(fieldId) {
-            let fieldLabel = document.querySelector('label[for="' + fieldId + '"]').textContent;
+            let fieldLabel = document.querySelector('label[for="' + fieldId + '"]').textContent-":";
             warningMessage += "- " + fieldLabel + "\n";
         });
         /*alert(warningMessage);*/
