@@ -81,7 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //elaborazione dati
     $data = array(substr($data, 0, 2), substr($data, 3, 2), substr($data, 6, 4));
-    var_dump($data);
     $data = $data[2]." ".$data[0]." ".$data[1];
 
     // Mostra i dati in una tabella
