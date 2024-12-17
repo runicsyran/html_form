@@ -113,7 +113,7 @@
         <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
         <script /*src="./dataPicker.js"*/>
         $(function() {
-            $("#dataPicker").datePicker()
+            $("#dataPicker").datepicker()
         });
         </script>
 
