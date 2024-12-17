@@ -8,4 +8,4 @@ RewriteEngine On
    RewriteCond %{REQUEST_FILENAME}\.html -f
    RewriteRule ^(.*)$ $1.html [L]
 # # av:php5-engine
-AddHandler av-php82 .php
+# AddHandler av-php82 .php
