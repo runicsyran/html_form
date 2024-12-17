@@ -88,7 +88,7 @@
             <br>
             <div id="gender-error" class="error"></div>
 
-            <label for="data">Data:</label><br>
+            <label for="dataPicker">dataPicker:</label><br>
             <input type="text" name="data" id="dataPicker"  onblur="validateField('dataPicker')"><br>
             <div id="dataPicker-error" class="error"></div>
 
