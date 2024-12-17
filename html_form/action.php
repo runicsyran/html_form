@@ -76,12 +76,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $surname = isset($_POST['surn']) ? htmlspecialchars($_POST['surn']) : '';
     $gender = isset($_POST['gender']) ? htmlspecialchars($_POST['gender']) : '';
     $city = isset($_POST['city']) ? htmlspecialchars($_POST['city']) : '';
-    $data = isset($_POST['data']) ? htmlspecialchars($_POST['data']) : '';
+    $dataPicker = isset($_POST['dataPicker']) ? htmlspecialchars($_POST['dataPicker']) : '';
     $residence = isset($_POST['res']) ? htmlspecialchars($_POST['res']) : '';
 
     //elaborazione dati
-    $data = array(substr($data, 0, 2), substr($data, 3, 2), substr($data, 6, 4));
-    $data = $data[2]." ".$data[0]." ".$data[1];
+    $dataPicker = array(substr($dataPicker, 0, 2), substr($dataPicker, 3, 2), substr($dataPicker, 6, 4));
+    $dataPicker = $dataPicker[2]." ".$dataPicker[0]." ".$dataPicker[1];
 
     // Mostra i dati in una tabella
     echo "<h1>Form inviato con successo</h1>";
@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<tr><td><strong>Name</strong></td><td>" . $name . "</td></tr>";
     echo "<tr><td><strong>Surname</strong></td><td>" . $surname . "</td></tr>";
     echo "<tr><td><strong>Gender</strong></td><td>" . $gender . "</td></tr>";
-    echo "<tr><td><strong>Gender</strong></td><td>" . $data . "</td></tr>";
+    echo "<tr><td><strong>Gender</strong></td><td>" . $dataPicker . "</td></tr>";
     echo "<tr><td><strong>City</strong></td><td>" . $city . "</td></tr>";
     echo "<tr><td><strong>Residence Address</strong></td><td>" . $residence . "</td></tr>";
     echo "</table>";
