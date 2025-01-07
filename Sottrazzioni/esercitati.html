@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esercitazione Sottrazzioni</title>
+    <title>Esercitazione Sottrazioni</title>
 </head>
 <body>
-    <form action=".\verifica.php" method="post">
-        <input type="number" min="0" max="999" value="0">
-        <input type="number" min="0" max="999" value="0">
+    <form action="verifica.php" method="post">
+        <label for="min">Minuendo:</label>
+        <input type="number" id="min" name="minuendo" min="0" max="999" value="0">
+        <br>
+        <label for="sott">Sottraendo:</label>
+        <input type="number" id="sott" name="sottraendo" min="0" max="999" value="0">
+        <br>
+        <label for="diff">Differenza:</label>
+        <input type="number" id="diff" name="differenza" min="0" max="999" value="0" readonly>
+        <br>
+        <button type="submit">Verifica</button>
+        <button type="reset">Cancella</button>
     </form>
 </body>
 </html>
