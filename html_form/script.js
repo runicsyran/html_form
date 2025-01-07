@@ -37,9 +37,11 @@ function validateForm(event) {
             isValid = false;
         }
     });
+    console.log("----");
     for(let i=0;i<emptyFields.length;i++){
         console.log(emptyFields[i]);
     }
+    console.log("----");
 
     // Se qualche campo è vuoto, annulla l'invio del modulo e mostra il warning
     if (!isValid) {
