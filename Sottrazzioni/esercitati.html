@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +17,8 @@
         }
         form {
             background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 10px;
+            border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         label {
@@ -49,12 +50,6 @@
         }
     </style>
 </head>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esercitazione Sottrazioni</title>
-</head>
 <body>
     <form action="verifica.php" method="post">
         <label for="min">Minuendo:</label>
@@ -66,15 +61,7 @@
         <label for="diff">Differenza:</label>
         <input type="number" id="diff" name="differenza" min="0" max="999" value="0" readonly>
         <br>
-        <button type="button" onclick="calcolaDifferenza()">Verifica</button>
-        <script>
-            function calcolaDifferenza() {
-            var minuendo = document.getElementById('min').value;
-            var sottraendo = document.getElementById('sott').value;
-            var differenza = minuendo - sottraendo;
-            document.getElementById('diff').value = differenza;
-            }
-        </script>
+        <button type="submit">Verifica</button>
         <button type="reset">Cancella</button>
     </form>
 </body>
