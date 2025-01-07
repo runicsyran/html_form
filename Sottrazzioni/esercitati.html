@@ -16,7 +16,15 @@
         <label for="diff">Differenza:</label>
         <input type="number" id="diff" name="differenza" min="0" max="999" value="0" readonly>
         <br>
-        <button type="submit">Verifica</button>
+        <button type="button" onclick="calcolaDifferenza()">Verifica</button>
+        <script>
+            function calcolaDifferenza() {
+            var minuendo = document.getElementById('min').value;
+            var sottraendo = document.getElementById('sott').value;
+            var differenza = minuendo - sottraendo;
+            document.getElementById('diff').value = differenza;
+            }
+        </script>
         <button type="reset">Cancella</button>
     </form>
 </body>
