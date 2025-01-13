@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Filtra gli errori nulli
     $errori = array_filter($errori);
 
-    // Mostra errori
+    // Mostra errori 139
     if (!empty($errori)) {
         foreach ($errori as $errore) {
             echo "<p style='color: red;'>$errore</p>";
