@@ -20,17 +20,13 @@
         $inputString = $_POST['inputString'];
         $charToCount = $_POST['charToCount'];
 
-        $vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-        $consonants = 0;
-        $vowelCount = 0;
-        $charCount = 0;
-        $numericCount = 0;
+        $vowels = 'aeiouAEIOU';
+        $vowelCount = $consonants = $charCount = $numericCount = 0;
         $charFrequency = [];
 
-        for ($i = 0; $i < strlen($inputString); $i++) {
-            $char = $inputString[$i];
+        foreach (str_split($inputString) as $char) {
             if (ctype_alpha($char)) {
-                if (in_array($char, $vowels)) {
+                if (strpos($vowels, $char) !== false) {
                     $vowelCount++;
                 } else {
                     $consonants++;
@@ -43,15 +39,10 @@
                 $charCount++;
             }
 
-            if (isset($charFrequency[$char])) {
-                $charFrequency[$char]++;
-            } else {
-                $charFrequency[$char] = 1;
-            }
+            $charFrequency[$char] = ($charFrequency[$char] ?? 0) + 1;
         }
 
-        $words = preg_split('/[\s,.!?]+/', $inputString, -1, PREG_SPLIT_NO_EMPTY);
-        $wordCount = count($words);
+        $wordCount = str_word_count($inputString);
 
         echo "<p>Numero di vocali: $vowelCount</p>";
         echo "<p>Numero di consonanti: $consonants</p>";
@@ -65,6 +56,5 @@
         }
         echo "</ul>";
     }
-    ?>
 </body>
 </html>
