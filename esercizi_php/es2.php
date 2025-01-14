@@ -56,5 +56,6 @@
         }
         echo "</ul>";
     }
+    ?>
 </body>
 </html>
