@@ -9,16 +9,12 @@
         <label for="inputString">Inserisci una stringa:</label>
         <input type="text" id="inputString" name="inputString" required>
         <br>
-        <label for="charToCount">Inserisci un carattere da contare:</label>
-        <input type="text" id="charToCount" name="charToCount" maxlength="1" required>
-        <br>
         <input type="submit" value="Analizza">
     </form>
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $inputString = $_POST['inputString'];
-        $charToCount = $_POST['charToCount'];
 
         $vowels = 'aeiouAEIOU';
         $vowelCount = $consonants = $charCount = $numericCount = 0;
@@ -48,7 +44,7 @@
 
         echo "<p>Numero di vocali: $vowelCount</p>";
         echo "<p>Numero di consonanti: $consonants</p>";
-        echo "<p>Numero di caratteri '$charToCount': $charCount</p>";
+        echo "<p>Numero di caratteri ripetuti: $charCount</p>";
         echo "<p>Numero di caratteri numerici: $numericCount</p>";
         echo "<p>Numero di parole: $wordCount</p>";
         echo "<p>Frequenza dei caratteri:</p>";
