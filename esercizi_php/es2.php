@@ -35,11 +35,13 @@
                 $numericCount++;
             }
 
-            if ($char == $charToCount) {
+            $charFrequency[$char] = ($charFrequency[$char] ?? 0) + 1;
+        }
+        $charCount = 0;
+        foreach($charFrequency as $char){
+            if($char>1){
                 $charCount++;
             }
-
-            $charFrequency[$char] = ($charFrequency[$char] ?? 0) + 1;
         }
 
         $wordCount = str_word_count($inputString);
