@@ -64,6 +64,8 @@
 
     $file = scanDirectory(".");
     println($file);
+    session_start();
+    $_SESSION['atleti'] = [];
 ?>
 <body>
     <ul>

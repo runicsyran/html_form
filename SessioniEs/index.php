@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+var_dump($_SESSION);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $atleta = [
@@ -12,17 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'specialita' => $_POST['specialita']
     ];
     $_SESSION['atleti'][] = $atleta;
-}
-?>
-<?php
-session_start();
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $_SESSION['nome'] = $_POST['nome'];
-    $_SESSION['cognome'] = $_POST['cognome'];
-    $_SESSION['nascita'] = $_POST['nascita'];
-    $_SESSION['gender'] = $_POST['gender'];
-    $_SESSION['nazione'] = $_POST['nazione'];
 }
 ?>
 <html lang="en">
