@@ -93,18 +93,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <form action="" method="post">
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome">
+        <input type="text" name="nome" id="nome"><br><br>
         <label for="cognome">Cognome:</label>
-        <input type="text" name="cognome" id="cognome">
+        <input type="text" name="cognome" id="cognome"><br><br>
         <label for="nascita">Data di Nascita:</label>
-        <input type="date" name="nascita" id="nascita">
+        <input type="date" name="nascita" id="nascita"><br><br>
         <label for="gender">Seleziona il tuo sesso:</label>
         <select>
             <option value="m">Maschio</option>
             <option value="f">Femmina</option>
-        </select>
+        </select><br><br>
         <label for="nazione">Nazionalità:</label>
-        <input type="text" name="nazione" id="nazione">
+        <input type="text" name="nazione" id="nazione"><br><br>
         <label for="specilità">Specialità:</label>
         <select name="specialita" id="specialita" required>
             <option value="discesa libera">Discesa Libera</option>
@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <option value="slalom gigante">Slalom Gigante</option>
             <option value="slalom speciale">Slalom Speciale</option>
             <option value="combinata">Combinata</option>
-        </select>
+        </select><br><br>
         <input type="submit" value="Invia">
     </form>
     <?php if (!empty($_SESSION['atleti'])): ?>
