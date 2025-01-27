@@ -100,8 +100,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="date" name="nascita" id="nascita"><br><br>
         <label for="gender">Seleziona il tuo sesso:</label>
         <select>
-            <option value="m">Maschio</option>
-            <option value="f">Femmina</option>
+            <option>Maschio</option>
+            <option>Femmina</option>
         </select><br><br>
         <label for="nazione">Nazionalità:</label>
         <input type="text" name="nazione" id="nazione"><br><br>
@@ -135,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <td>" . htmlspecialchars($atleta['nome']) . "</td>
                             <td>" . htmlspecialchars($atleta['cognome']) . "</td>
                             <td>" . htmlspecialchars($atleta['nascita']) . "</td>
-                            <td>" . htmlspecialchars($atleta['gender'] == 'm' ? 'Maschio' : 'Femmina') . "</td>
+                            <td>" . htmlspecialchars($atleta['gender']) . "</td>
                             <td>" . htmlspecialchars($atleta['nazione']) . "</td>
                           </tr>";
                 }
