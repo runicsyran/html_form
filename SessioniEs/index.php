@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <td><?php echo htmlspecialchars($_SESSION['nome']); ?></td>
                 <td><?php echo htmlspecialchars($_SESSION['cognome']); ?></td>
                 <td><?php echo htmlspecialchars($_SESSION['nascita']); ?></td>
-                <td><?php echo htmlspecialchars($_SESSION['gender']); ?></td>
+                <td><?php echo htmlspecialchars($_SESSION['gender'] == 'm' ? 'Maschio' : 'Femmina'); ?></td>
                 <td><?php echo htmlspecialchars($_SESSION['nazione']); ?></td>
             </tr>
         </table>
