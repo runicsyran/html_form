@@ -83,18 +83,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <form action="" method="post">
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome"><br><br>
+        <input required type="text" name="nome" id="nome"><br><br>
         <label for="cognome">Cognome:</label>
-        <input type="text" name="cognome" id="cognome"><br><br>
+        <input required type="text" name="cognome" id="cognome"><br><br>
         <label for="nascita">Data di Nascita:</label>
-        <input type="date" name="nascita" id="nascita"><br><br>
+        <input required type="date" name="nascita" id="nascita"><br><br>
         <label for="gender">Seleziona il tuo sesso:</label>
         <select>
             <option>Maschio</option>
             <option>Femmina</option>
         </select><br><br>
         <label for="nazione">Nazionalità:</label>
-        <input type="text" name="nazione" id="nazione"><br><br>
+        <input required type="text" name="nazione" id="nazione"><br><br>
         <label for="specilità">Specialità:</label>
         <select name="specialita" id="specialita" required>
             <option value="discesa libera">Discesa Libera</option>
