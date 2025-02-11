@@ -17,10 +17,10 @@ class AuthController {
             session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header("Location: /dashboard.php");
+            header("Location: ../public/dashboard.php");
             exit();
         } else {
-            return "Invalid username or password.";
+            return "Username or password is incorrect.";
         }
     }
 
@@ -29,23 +29,23 @@ class AuthController {
         $stmt = $this->db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $hashedPassword);
-        
-        if ($stmt->execute()) {
-            return "Registration successful. You can now log in.";
-        } else {
-            return "Registration failed. Please try again.";
-        }
-    }
 
-    public function isLoggedIn() {
-        session_start();
-        return isset($_SESSION['user_id']);
+        if ($stmt->execute()) {
+            return "Registration successful.";
+        } else {
+            return "Registration failed.";
+        }
     }
 
     public function logout() {
         session_start();
         session_destroy();
-        header("Location: /login.php");
+        header("Location: ../public/login.php");
         exit();
+    }
+
+    public function isLoggedIn() {
+        session_start();
+        return isset($_SESSION['user_id']);
     }
 }
