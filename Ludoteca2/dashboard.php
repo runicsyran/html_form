@@ -52,6 +52,6 @@ $result = $conn->query($sql);
             ?>
         </tbody>
     </table>
-    <p>.<a href="gameinsert.php"></a></p>
+    <p><a href="gameinsert.php">.</a></p>
 </body>
 </html>
