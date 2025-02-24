@@ -25,20 +25,22 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "users";
+        $dbname = "my_michelangelocuccui";
 
-        // Create connection
+        // Crea la connessione al database
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Check connection
+        // Controlla connessione al database
         if ($conn->connect_error) {
             die("Connessione fallita: " . $conn->connect_error);
         }
 
+        // Prendi i dati dal form
         $user = $_POST['username'];
         $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $email = $_POST['email'];
 
+        // Inserisci i dati nel database
         $sql = "INSERT INTO utenti (username, password, email) VALUES ('$user', '$pass', '$email')";
 
         if ($conn->query($sql) === TRUE) {
