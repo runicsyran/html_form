@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Query per verificare le credenziali
     $sql = "SELECT * FROM users WHERE username = ? AND password = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ss', $username, $password);
+    $stmt->bind_param('ss', $username, password_hash($password));
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Login effettuato con successo!";
         ?><meta http-equiv="refresh" content="0; url=https://michelangelocuccui.altervista.org/Ludoteca2/dashboard.php"><?php
     } else {
-        echo "Nome utente o password errati/ non presenti";
+        echo "Nome utente o password errati / non presenti";
     }
 
     $stmt->close();
