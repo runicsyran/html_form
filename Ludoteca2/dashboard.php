@@ -28,10 +28,10 @@ $result = $conn->query($sql);
     <table>
         <thead>
             <tr>
-            <th style="padding: 10px;">ID</th>
-            <th style="padding: 10px;">Titolo</th>
-            <th style="padding: 10px;">Genere</th>
-            <th style="padding: 10px;">Data di Rilascio</th>
+                <th>ID</th>
+                <th>Titolo</th>
+                <th>Genere</th>
+                <th>Data di Rilascio</th>
             </tr>
         </thead>
         <tbody>
