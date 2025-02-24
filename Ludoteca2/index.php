@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Query per verificare le credenziali
     $sql = "SELECT * FROM users WHERE username = ? AND password = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ss', $username, password_hash($password));
+    $stmt->bind_param('ss', $username, ($password));
     $stmt->execute();
     $result = $stmt->get_result();
 

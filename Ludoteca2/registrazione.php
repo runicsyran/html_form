@@ -37,7 +37,7 @@
 
         // Prendi i dati dal form
         $user = $_POST['username'];
-        $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $pass = ($_POST['password'], PASSWORD_DEFAULT);
         $email = $_POST['email'];
 
         // Inserisci i dati nel database
