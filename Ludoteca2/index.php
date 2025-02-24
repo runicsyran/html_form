@@ -1,4 +1,36 @@
 <!DOCTYPE html>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Connessione al database
+    $conn = new mysqli('localhost', 'root', '', 'my_michelangelocuccui');
+
+    // Controllo connessione
+    if ($conn->connect_error) {
+        die("Connessione fallita: " . $conn->connect_error);
+    }
+
+    // Query per verificare le credenziali
+    $sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ss', $username, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Controllo credenziali
+    if ($result->num_rows > 0) {
+        echo "Login effettuato con successo!";
+        ?><meta http-equiv="refresh" content="0; url=https://michelangelocuccui.altervista.org/Ludoteca2/dashboard.php"><?php
+    } else {
+        echo "Nome utente o password errati/ non presenti";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
