@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, name, genre, release_date FROM Games";
+$sql = "SELECT id, title, genre, release_date FROM Games";
 $result = $conn->query($sql);
 ?>
 
@@ -52,5 +52,6 @@ $result = $conn->query($sql);
             ?>
         </tbody>
     </table>
+    <h6>.<a href=""></a></h6>
 </body>
 </html>
