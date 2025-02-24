@@ -24,7 +24,7 @@
         <input type="text" id="platform" name="platform" required><br><br>
 
         <input type="submit" value="Inserisci">
-        <p>Ritorna alla dashboard <a href="dashboard.php"></a></p>
+        <p><a href="dashboard.php">Ritorna alla dashboard</a></p>
     </form>
 
     <?php
