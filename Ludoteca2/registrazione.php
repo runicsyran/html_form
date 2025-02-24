@@ -45,6 +45,8 @@
 
         if ($conn->query($sql) === TRUE) {
             echo "Registrazione avvenuta con successo";
+            header("Location: login.php");
+            exit();
         } else {
             echo "Errore: " . $sql . "<br>" . $conn->error;
         }
