@@ -41,7 +41,7 @@
         $email = $_POST['email'];
 
         // Inserisci i dati nel database
-        $sql = "INSERT INTO utenti (username, password, email) VALUES ('$user', '$pass', '$email')";
+        $sql = "INSERT INTO users (username, password, email) VALUES ('$user', '$pass', '$email')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Registrazione avvenuta con successo";
