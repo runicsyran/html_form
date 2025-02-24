@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrazione</title>
+    <script src="js/scripts.js"></script>
 </head>
 <body>
     <h2>Registrazione</h2>
-    <form action="registrazione.php" method="post">
+    <form action="registrazione.php" method="post" onsubmit="return validatePassword()">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
         
@@ -45,7 +46,7 @@
 
         if ($conn->query($sql) === TRUE) {
             echo "Registrazione avvenuta con successo";
-            ?><meta http-equiv="refresh" content="0; url=https://michelangelocuccui.altervista.org/Ludoteca2/index.php"><?php
+            ?><meta http-equiv="refresh" content="0; url=https://michelangelocuccui.altervista.org/Ludoteca2/login.php"><?php
             // header("Location: index.php");
             exit();
         } else {
