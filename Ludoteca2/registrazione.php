@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrazione</title>
     <script src="js/scripts.js"></script>
+    <script src="js/Popup.js"></script>
 </head>
 <body>
     <h2>Registrazione</h2>
