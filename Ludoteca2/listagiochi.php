@@ -1,15 +1,17 @@
 <?php
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "my_michelangelocuccui";
 
-// Create connection
+// Crea la connessione
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+// Controlla la connessione
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connessione fallita: " . $conn->connect_error);
 }
 
 $sql = "SELECT id, title, genre, release_date, price FROM Games";
@@ -32,7 +34,7 @@ $result = $conn->query($sql);
                 <th>ID</th>
                 <th>Titolo</th>
                 <th>Genere</th>
-                <th>Data di Rilascio</th>ù
+                <th>Data di Rilascio</th>
                 <th>Prezzo</th>
                 <th>Aggiungi al Carrello</th>
             </tr>
@@ -42,13 +44,13 @@ $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>
-                    <td>" . $row["id"] . "</td>
-                    <td>" . $row["title"] . "</td>
-                    <td>" . $row["genre"] . "</td>
-                    <td>" . $row["release_date"] . "</td>
-                    <td>" . $row["price"] . "</td>
-                    <td><img src='img/cart.png' class='cart-icon' onclick=\"addToCart('" . $row["title"] . "', '" . $row["price"] . "')\"></td>
-                  </tr>";
+                            <td>" . $row["id"] . "</td>
+                            <td>" . $row["title"] . "</td>
+                            <td>" . $row["genre"] . "</td>
+                            <td>" . $row["release_date"] . "</td>
+                            <td>" . $row["price"] . "</td>
+                            <td><img src='img/cart.png' class='cart-icon' onclick=\"addToCart('" . $row["title"] . "', '" . $row["price"] . "')\"></td>
+                          </tr>";
                 }
             } else {
                 echo "<tr><td colspan='6'>Nessun gioco trovato</td></tr>";

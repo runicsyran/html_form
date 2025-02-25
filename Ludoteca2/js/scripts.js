@@ -16,22 +16,21 @@ function validatePassword() {
     }
     return true;
 }
-// funzione per l'inserimento di un gioco nel carrello
-function addToCart(title, price) {
-    var xhr = new XMLHttpRequest(); // oggetto che permette di fare richieste HTTP
-    xhr.open("POST", "add_to_cart.php", true); // imposto il metodo di richiesta e il file a cui fare la richiesta
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // imposto l'header della richiesta
-    xhr.onreadystatechange = function () { // funzione che viene eseguita quando cambia lo stato della richiesta
-        if (xhr.readyState == 4 && xhr.status == 200) { // se la richiesta è completata e ha successo
-            //alert("Gioco aggiunto al carrello!"); // mostro un alert
-            const myPopup = new Popup({
+function addToCart(title, price) { // Funzione per aggiungere un gioco al carrello
+    var xhr = new XMLHttpRequest(); // Creo un oggetto XMLHttpRequest
+    xhr.open("POST", "add_to_cart.php", true); // Apro una connessione POST con add_to_cart.php
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // Imposto l'header della richiesta
+    xhr.onreadystatechange = function () { // Quando lo stato della richiesta cambia
+        if (xhr.readyState == 4 && xhr.status == 200) { // Se la richiesta è completata e lo stato è OK
+            //alert("Gioco aggiunto al carrello!");
+            const myPopup2 = new Popup({ // Creo un popup
                 id: "popup2",
-                title: "Gioco aggiunto al carrello",
-                content: "Hai inserito un gioco nel carrello!!",  
+                title: "Informazione",
+                content: "Gioco inserito nel carrello con successo",  
                 backgroundColor: "skyblue",
             });
-            myPopup.show();
-        } 
+            myPopup2.show();
+        }
     };
-    xhr.send("title=" + title + "&price=" + price); // invio la richiesta
+    xhr.send("title=" + title + "&price=" + price);
 }
