@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Insert</title>
+    <title>Inserisci Gioco</title>
 </head>
 <body>
-    <h1>Insert New Game</h1>
+    <h1>Inserisci Nuovo Gioco</h1>
     <form action="gameinsert.php" method="post">
         <label for="title">Titolo:</label>
         <input type="text" id="title" name="title" required><br><br>

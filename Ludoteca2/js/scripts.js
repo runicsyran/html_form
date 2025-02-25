@@ -1,4 +1,5 @@
 function validatePassword() {
+    event.preventDefault();
     var password = document.getElementById("password").value;
     var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
