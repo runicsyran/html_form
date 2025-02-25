@@ -6,7 +6,7 @@
     <title>Inserisci Gioco</title>
 </head>
 <body>
-    <h1>Inserisci Nuovo Gioco</h1>
+    <h1>Inserisci Nuovo Gioco</h1>  
     <form action="gameinsert.php" method="post">
         <label for="title">Titolo:</label>
         <input type="text" id="title" name="title" required><br><br>
@@ -22,6 +22,9 @@
 
         <label for="platform">Piattaforma:</label>
         <input type="text" id="platform" name="platform" required><br><br>
+
+        <label for="price">Prezzo:</label>
+        <input type="number" id="price" name="price" required><br><br>
 
         <input type="submit" value="Inserisci">
         <p><a href="dashboard.php">Ritorna alla dashboard</a></p>
@@ -48,9 +51,10 @@
         $reld = $_POST['release_date'];
         $genre = $_POST['genre'];
         $plat = $_POST['platform'];
+        $price = $_POST['price'];
 
         // Inserisci i dati nel database
-        $sql = "INSERT INTO Games (title, publisher, release_date, genre, platform) VALUES ('$title', '$pubb', '$reld', '$genre', '$plat')";
+        $sql = "INSERT INTO Games (title, publisher, release_date, genre, platform, price) VALUES ('$title', '$pubb', '$reld', '$genre', '$plat', '$price')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Gioco inserito con successo";

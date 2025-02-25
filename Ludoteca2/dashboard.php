@@ -25,33 +25,8 @@ $result = $conn->query($sql);
 </head>
 <body>
     <h1>Dashboard Ludoteca</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Titolo</th>
-                <th>Genere</th>
-                <th>Data di Rilascio</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr>
-                            <td>" . $row["id"] . "</td>
-                            <td>" . $row["title"] . "</td>
-                            <td>" . $row["genre"] . "</td>
-                            <td>" . $row["release_date"] . "</td>
-                          </tr>";
-                }
-            } else {
-                echo "<tr><td colspan='4'>Nessun gioco trovato</td></tr>";
-            }
-            $conn->close();
-            ?>
-        </tbody>
-    </table>
+    <p>Benvenuto nella Dashboard della Ludoteca. Qui puoi gestire i tuoi giochi e visualizzare il tuo carrello.</p>
+    <p><a href="listagiochi.php">Lista Giochi</a> | <a href="mycart.php">Il Mio Carrello</a></p>
     <p><a href="gameinsert.php">.</a></p>
 </body>
 </html>
