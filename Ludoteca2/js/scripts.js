@@ -1,4 +1,4 @@
-function validatePassword() {
+function validatePassword(form) {
     event.preventDefault();
     var password = document.getElementById("password").value;
     var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
@@ -14,6 +14,7 @@ function validatePassword() {
         myPopup.show();
         return false;
     }
+    form.submit();
     return true;
 }
 function addToCart(title, price) { // Funzione per aggiungere un gioco al carrello

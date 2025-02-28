@@ -9,7 +9,7 @@
 </head>
 <body>
     <h2>Registrazione</h2>
-    <form action="registrazione.php" method="post" onsubmit="return validatePassword()">
+    <form action="registrazione.php" method="post" onsubmit="return validatePassword(THIS)">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
         
