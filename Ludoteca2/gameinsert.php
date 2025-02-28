@@ -7,7 +7,10 @@
 </head>
 <body>
     <h1>Inserisci Nuovo Gioco</h1>  
-    <form action="gameinsert.php" method="post">
+    <form action="gameinsert.php" method="post" enctype="multipart/form-data">
+        <label for="cover">Cover:</label>
+        <input type="file" name="immagini" id="immagini" required><br><br>
+
         <label for="title">Titolo:</label>
         <input type="text" id="title" name="title" required><br><br>
 
@@ -52,6 +55,21 @@
         $genre = $_POST['genre'];
         $plat = $_POST['platform'];
         $price = $_POST['price'];
+
+        if(isset($_POST['titolo'])){
+            if($conn->query("select * from articoli where titolo = '".$_POST["titolo"]."'")->fetch_assoc()){
+                echo "non puoi inserire un'altro gioco con questo nome";
+                ?><meta http-equiv="refresh" content="5; url=creaArticolo"><?php
+                exit;
+            }
+            $dir = "articoli/".str_replace(" ", "-", $_POST["titolo"]);
+            mkdir($dir, 0755);
+            foreach($_FILES["immagini"]["tmp_name"] as $index => $tmp_name) {
+                $file_name = str_replace(" ", "-", $_FILES["immagini"]["name"][$index]);
+                $destination = $dir . "/" . $file_name;
+                move_uploaded_file($tmp_name, $destination);
+            }
+        }
 
         // Inserisci i dati nel database
         $sql = "INSERT INTO Games (title, publisher, release_date, genre, platform, price) VALUES ('$title', '$pubb', '$reld', '$genre', '$plat', '$price')";
