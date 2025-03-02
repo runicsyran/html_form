@@ -34,6 +34,10 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                             <td>" . $item['price'] . "</td>
                           </tr>";
                 }
+                echo "<tr>
+                        <td><strong>Costo Totale:</strong></td>
+                        <td><strong>" . $total . "</strong></td>
+                      </tr>";
             } else {
                 echo "<tr><td colspan='2'>Il carrello è vuoto</td></tr>";
             }
