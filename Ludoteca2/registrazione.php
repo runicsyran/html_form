@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrazione</title>
-    <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js"></script>
     <script src="js/Popup.js"></script>
 </head>

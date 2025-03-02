@@ -15,7 +15,6 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Il Mio Carrello</title>
-    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <h1>Il Mio Carrello</h1>
