@@ -56,13 +56,13 @@
         $plat = $_POST['platform'];
         $price = $_POST['price'];
 
-        if(isset($_POST['titolo'])){
-            if($conn->query("select * from articoli where titolo = '".$_POST["titolo"]."'")->fetch_assoc()){
+        if(isset($_POST['title'])){
+            if($conn->query("select * from Games where title = '".$_POST["title"]."'")->fetch_assoc()){
                 echo "non puoi inserire un'altro gioco con questo nome";
-                ?><meta http-equiv="refresh" content="5; url=creaArticolo"><?php
+                ?><meta http-equiv="refresh" content="5; url=gameinsert"><?php
                 exit;
             }
-            $dir = "articoli/".str_replace(" ", "-", $_POST["titolo"]);
+            $dir = "img/".str_replace(" ", "-", $_POST["title"]);
             mkdir($dir, 0755);
             foreach($_FILES["immagini"]["tmp_name"] as $index => $tmp_name) {
                 $file_name = str_replace(" ", "-", $_FILES["immagini"]["name"][$index]);
