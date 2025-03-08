@@ -27,6 +27,14 @@ $result = $conn->query($sql);
     <script src="js/scripts.js"></script>
     <script src="js/Popup.js"></script>
 </head>
+<style>
+    .logout-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+</style>
+<a href="logout.php" class="logout-button">Logout</a>
 <body>
     <h1>Elenco Giochi:</h1>
     <table>
@@ -60,5 +68,7 @@ $result = $conn->query($sql);
             ?>
         </tbody>
     </table>
+    <p><a href="dashboard.php">Ritorna alla dashboard</a></p>
+    <p><a href="cart.php">Vai al carrello</a></p>
 </body>
 </html>

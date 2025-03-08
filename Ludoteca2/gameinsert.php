@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inserisci Gioco</title>
 </head>
+<style>
+    .logout-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+</style>
+<a href="logout.php" class="logout-button">Logout</a>
 <body>
     <h1>Inserisci Nuovo Gioco</h1>  
     <form action="gameinsert.php" method="post" enctype="multipart/form-data">
