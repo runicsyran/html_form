@@ -69,6 +69,6 @@ $result = $conn->query($sql);
         </tbody>
     </table>
     <p><a href="dashboard.php">Ritorna alla dashboard</a></p>
-    <p><a href="cart.php">Vai al carrello</a></p>
+    <p><a href="mycart.php">Vai al carrello</a></p>
 </body>
 </html>
