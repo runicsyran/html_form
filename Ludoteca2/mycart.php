@@ -23,7 +23,7 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
         right: 10px;
     }
 </style>
-<a href="logout.php" class="logout-button">Logout</a>
+<a href="endSession.php" class="logout-button">Logout</a>
 <body>
     <h1>Il Mio Carrello</h1>
     <table>

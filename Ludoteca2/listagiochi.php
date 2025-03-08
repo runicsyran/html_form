@@ -34,7 +34,7 @@ $result = $conn->query($sql);
         right: 10px;
     }
 </style>
-<a href="logout.php" class="logout-button">Logout</a>
+<a href="endSession.php" class="logout-button">Logout</a>
 <body>
     <h1>Elenco Giochi:</h1>
     <table>

@@ -30,7 +30,7 @@ $result = $conn->query($sql);
         right: 10px;
     }
 </style>
-<a href="logout.php" class="logout-button">Logout</a>
+<a href="endSession.php" class="logout-button">Logout</a>
 <body>
     <h1>Dashboard Ludoteca</h1>
     <p>Benvenuto nella Dashboard della Ludoteca. Qui puoi gestire i tuoi giochi e visualizzare il tuo carrello.</p>
