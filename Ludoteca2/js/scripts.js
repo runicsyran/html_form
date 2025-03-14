@@ -23,7 +23,6 @@ function addToCart(title, price) { // Funzione per aggiungere un gioco al carrel
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // Imposto l'header della richiesta
     xhr.onreadystatechange = function () { // Quando lo stato della richiesta cambia
         if (xhr.readyState == 4 && xhr.status == 200) { // Se la richiesta è completata e lo stato è OK
-            //alert("Gioco aggiunto al carrello!");
             const myPopup2 = new Popup({ // Creo un popup
                 id: "popup2",
                 title: "Informazione",

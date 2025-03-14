@@ -48,7 +48,6 @@
         if ($conn->query($sql) === TRUE) {
             echo "Registrazione avvenuta con successo";
             ?><meta http-equiv="refresh" content="0; url=https://michelangelocuccui.altervista.org/Ludoteca2/login.php"><?php
-            // header("Location: index.php");
             exit();
         } else {
             echo "Errore: " . $sql . "<br>" . $conn->error;

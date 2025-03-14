@@ -12,7 +12,7 @@
         right: 10px;
     }
 </style>
-<a href="./endSession.php" class="logout-button">Logout</a>
+<a href="endSession.php" class="logout-button">Logout</a>
 <body>
     <h1>Inserisci Nuovo Gioco</h1>  
     <form action="gameinsert.php" method="post" enctype="multipart/form-data">
