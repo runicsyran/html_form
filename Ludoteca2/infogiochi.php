@@ -1,5 +1,5 @@
 <?php
-require('fpdf.php'); // Includi la libreria FPDF
+require('Ludoteca2\fpdf\fpdf.php'); // Includi la libreria FPDF
 
 $servername = "localhost";
 $username = "root";
