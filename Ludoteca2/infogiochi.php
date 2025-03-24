@@ -75,15 +75,26 @@ if (isset($_POST['generate_pdf'])) {
 </head>
 <body>
     <h1>Informazioni sul Gioco</h1>
-    <p><strong>Titolo:</strong> <?php echo $game['title']; ?></p>
-    <p><strong>Casa di Produzione:</strong> <?php echo $game['publisher']; ?></p>
-    <p><strong>Data di Rilascio:</strong> <?php echo $game['release_date']; ?></p>
-    <p><strong>Genere:</strong> <?php echo $game['genre']; ?></p>
-    <p><strong>Piattaforma:</strong> <?php echo $game['platform']; ?></p>
-    <p><strong>Prezzo:</strong> €<?php echo $game['price']; ?></p>
-
-    <!-- Tasto per la generazione del PDF -->
     <form method="post">
+        <label><strong>Titolo:</strong></label>
+        <input type="text" name="title" value="<?php echo $game['title']; ?>" readonly><br>
+
+        <label><strong>Casa di Produzione:</strong></label>
+        <input type="text" name="publisher" value="<?php echo $game['publisher']; ?>" readonly><br>
+
+        <label><strong>Data di Rilascio:</strong></label>
+        <input type="text" name="release_date" value="<?php echo $game['release_date']; ?>" readonly><br>
+
+        <label><strong>Genere:</strong></label>
+        <input type="text" name="genre" value="<?php echo $game['genre']; ?>" readonly><br>
+
+        <label><strong>Piattaforma:</strong></label>
+        <input type="text" name="platform" value="<?php echo $game['platform']; ?>" readonly><br>
+
+        <label><strong>Prezzo:</strong></label>
+        <input type="text" name="price" value="€<?php echo $game['price']; ?>" readonly><br>
+
+        <!-- Tasto per la generazione del PDF -->
         <button type="submit" name="generate_pdf">Scarica in PDF</button>
     </form>
 
