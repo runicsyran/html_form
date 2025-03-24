@@ -1,5 +1,5 @@
 <?php
-require('.\fpdf\fpdf.php'); // Includi la libreria FPDF
+require('fpdf/fpdf.php'); // Includi la libreria FPDF
 
 $servername = "localhost";
 $username = "root";
