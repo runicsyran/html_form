@@ -64,6 +64,7 @@
         $plat = $_POST['platform'];
         $price = $_POST['price'];
 
+       /*// inserimento immagine tra le informazioni del gioco
         if(isset($_POST['title'])){
             if($conn->query("select * from Games where title = '".$_POST["title"]."'")->fetch_assoc()){
                 echo "non puoi inserire un'altro gioco con questo nome";
@@ -77,7 +78,7 @@
                 $destination = $dir . "/" . $file_name;
                 move_uploaded_file($tmp_name, $destination);
             }
-        }
+        }*/
 
         // Inserisci i dati nel database
         $sql = "INSERT INTO Games (title, publisher, release_date, genre, platform, price) VALUES ('$title', '$pubb', '$reld', '$genre', '$plat', '$price')";

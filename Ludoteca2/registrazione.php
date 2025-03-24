@@ -6,6 +6,7 @@
     <title>Registrazione</title>
     <script src="js/scripts.js"></script>
     <script src="js/Popup.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h2>Registrazione</h2>
@@ -47,7 +48,7 @@
 
         if ($conn->query($sql) === TRUE) {
             echo "Registrazione avvenuta con successo";
-            ?><meta http-equiv="refresh" content="0; url=https://michelangelocuccui.altervista.org/Ludoteca2/login.php"><?php
+            ?><meta http-equiv="refresh" content="0; url=https://michelangelocuccui.altervista.org/Ludoteca2/login.php"><?php       
             exit();
         } else {
             echo "Errore: " . $sql . "<br>" . $conn->error;

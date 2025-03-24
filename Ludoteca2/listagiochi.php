@@ -54,7 +54,7 @@ $result = $conn->query($sql);
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>
                             <td>" . $row["id"] . "</td>
-                            <td>" . $row["title"] . "</td>
+                            <td><a href='infogiochi.php?id=" . $row["id"] . "'>" . $row["title"] . "</a></td>
                             <td>" . $row["genre"] . "</td>
                             <td>" . $row["release_date"] . "</td>
                             <td>" . $row["price"] . "</td>
