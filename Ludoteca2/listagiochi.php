@@ -26,6 +26,7 @@ $result = $conn->query($sql);
     <title>Giochi Disponibili in Ludoteca</title>
     <script src="js/scripts.js"></script>
     <script src="js/Popup.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <style>
     .logout-button {
