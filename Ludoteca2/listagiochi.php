@@ -14,7 +14,8 @@ if ($conn->connect_error) {
     die("Connessione fallita: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, title, genre, release_date, price FROM Games";
+$sql = "SELECT id, title, genre, release_date, price, image FROM Games";
+
 $result = $conn->query($sql);
 ?>
 
@@ -54,13 +55,23 @@ $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>
-                            <td>" . $row["id"] . "</td>
-                            <td><a href='infogiochi.php?id=" . $row["id"] . "'>" . $row["title"] . "</a></td>
-                            <td>" . $row["genre"] . "</td>
-                            <td>" . $row["release_date"] . "</td>
-                            <td>" . $row["price"] . "</td>
-                            <td><img src='img/cart.png' class='cart-icon' onclick=\"addToCart('" . $row["title"] . "', '" . $row["price"] . "')\"></td>
-                          </tr>";
+                    <td>" . $row["id"] . "</td>
+                    <td><a href='infogiochi.php?id=" . $row["id"] . "'>" . $row["title"] . "</a></td>
+                    <td>" . $row["genre"] . "</td>
+                    <td>" . $row["release_date"] . "</td>
+                    <td>" . $row["price"] . "</td>
+                    <td>";
+            
+                if (!empty($row["image"])) {
+                echo "<img src='" . $row["image"] . "' alt='Copertina del Gioco' width='80' height='80'>";
+                } else {
+                echo "Nessuna immagine";
+                }
+            
+                echo "</td>
+                  <td><img src='img/cart.png' class='cart-icon' onclick=\"addToCart('" . $row["title"] . "', '" . $row["price"] . "')\"></td>
+                  </tr>";
+            
                 }
             } else {
                 echo "<tr><td colspan='6'>Nessun gioco trovato</td></tr>";

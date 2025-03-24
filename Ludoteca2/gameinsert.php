@@ -82,7 +82,9 @@
         }*/
 
         // Inserisci i dati nel database
-        $sql = "INSERT INTO Games (title, publisher, release_date, genre, platform, price) VALUES ('$title', '$pubb', '$reld', '$genre', '$plat', '$price')";
+        $sql = "INSERT INTO Games (title, publisher, release_date, genre, platform, price, image) 
+        VALUES ('$title', '$pubb', '$reld', '$genre', '$plat', '$price', '$destination')";
+
 
         if ($conn->query($sql) === TRUE) {
             echo "Gioco inserito con successo";
