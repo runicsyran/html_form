@@ -1,38 +1,48 @@
-SELECT C.CodiceCli, C.RagioneSociale, C.Indirizzo, C.Telefono, C.PartitaIVA
-FROM Clienti C
-JOIN Rappresentanti R ON C.CodiceRap = R.CodiceRap
-WHERE R.CodiceRap = <CodiceRap>;
+--1
+SELECT CodiceCli, RagioneSociale
+FROM Clienti
+WHERE CodiceRap = ?; -- sostituisci ? con il codice del rappresentante
 
-SELECT COUNT(C.CodiceCli) AS NumeroClienti
-FROM Clienti C
-WHERE C.CodiceRap = <CodiceRap>;
+--2
+SELECT COUNT(*) AS NumeroClienti
+FROM Clienti
+WHERE CodiceRap = ?; -- sostituisci ? con il codice del rappresentante
 
+--3
 SELECT R.CodiceRap, R.CognomeRap, R.NomeRap, COUNT(F.NumeroFatt) AS NumeroFatture
-FROM Fatture F
-JOIN Clienti C ON F.CodiceCli = C.CodiceCli
-JOIN Rappresentanti R ON C.CodiceRap = R.CodiceRap
+FROM Rappresentanti R
+JOIN Clienti C ON R.CodiceRap = C.CodiceRap
+JOIN Fatture F ON C.CodiceCli = F.CodiceCli
 GROUP BY R.CodiceRap, R.CognomeRap, R.NomeRap;
 
+--4
 SELECT C.RagioneSociale, F.DataFatt
 FROM Fatture F
 JOIN Clienti C ON F.CodiceCli = C.CodiceCli
-WHERE F.Importo = (SELECT MAX(Importo) FROM Fatture);
+WHERE F.Importo = (
+    SELECT MAX(Importo) FROM Fatture
+);
 
+--5
 SELECT R.CognomeRap, R.NomeRap
 FROM Fatture F
 JOIN Clienti C ON F.CodiceCli = C.CodiceCli
 JOIN Rappresentanti R ON C.CodiceRap = R.CodiceRap
-WHERE F.Importo = (SELECT MAX(Importo) FROM Fatture);
+WHERE F.Importo = (
+    SELECT MAX(Importo) FROM Fatture
+);
 
-SELECT C.CodiceCli, C.RagioneSociale
+--6
+SELECT C.CodiceCli, C.RagioneSociale, SUM(F.Importo) AS TotaleFatturato
 FROM Clienti C
 JOIN Fatture F ON C.CodiceCli = F.CodiceCli
 GROUP BY C.CodiceCli, C.RagioneSociale
-HAVING SUM(F.Importo) > <ValorePrefissato>;
+HAVING SUM(F.Importo) > ?; -- sostituisci ? con il valore prefissato
 
-SELECT R.CodiceRap, R.CognomeRap, R.NomeRap
-FROM Fatture F
-JOIN Clienti C ON F.CodiceCli = C.CodiceCli
-JOIN Rappresentanti R ON C.CodiceRap = R.CodiceRap
+--7
+SELECT R.CodiceRap, R.CognomeRap, R.NomeRap, COUNT(F.NumeroFatt) AS NumeroFatture
+FROM Rappresentanti R
+JOIN Clienti C ON R.CodiceRap = C.CodiceRap
+JOIN Fatture F ON C.CodiceCli = F.CodiceCli
 GROUP BY R.CodiceRap, R.CognomeRap, R.NomeRap
-HAVING COUNT(F.NumeroFatt) > <NumeroPrefissato>;
+HAVING COUNT(F.NumeroFatt) > ?; -- sostituisci ? con il numero prefissato
